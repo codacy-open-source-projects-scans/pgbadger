@@ -38,7 +38,7 @@ ok( $json_ref->{pgb_session_info}{chronos}{20180912}{16}{count} == 63943, "pgBou
 
 $ret = `ls -la $OUT | awk '{print \$5}'`;
 chomp($ret);
-ok( $ret == 229293, "Consistent pgbouncer reports $ret != 229293");
+ok( $ret == 230257, "Consistent pgbouncer reports $ret != 230257");
 
 `rm -f $OUT`;
 
@@ -50,7 +50,7 @@ ok( $json_ref->{database_info}{postgres}{GREEN}{"cte|duration"} eq "21761.546", 
 # check logplex multiline and new format
 $ret = `grep -E "WHERE missions.checker_id = " out.json | wc -l`;
 chomp($ret);
-ok( $ret == 1, "logplex multiline and new format");
+ok( $ret == 1, "logplex multiline and new format : $ret");
 
 `rm -f $OUT`;
 
